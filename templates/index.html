@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>1-Click Interview Question Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px auto;
+            max-width: 800px;
+        }
+        textarea {
+            width: 100%;
+            height: 250px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .file-upload {
+            margin: 20px 0;
+        }
+        input[type="file"] {
+            margin-top: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        .questions {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 6px;
+        }
+        .questions li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>1-Click Interview Question Generator</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Paste your resume text:</label>
+        <textarea name="resume_text" placeholder="Or upload your resume below..."></textarea>
+
+        <div class="file-upload">
+            <label>Or upload resume (PDF/DOCX):</label><br>
+            <input type="file" name="resume_file" accept=".pdf,.docx">
+        </div>
+
+        <button type="submit">Generate Questions</button>
+    </form>
+
+    {% if questions %}
+        <div class="questions">
+            <h3>Generated Questions:</h3>
+            <ol>
+                {% for q in questions %}
+                    <li>{{ q|safe }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+    {% endif %}
+</body>
+</html>
