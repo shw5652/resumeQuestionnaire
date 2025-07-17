@@ -16,8 +16,8 @@ A Flask-based web app that generates customized interview questions based on you
 ## 📦 Local Setup
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/resume-questionnaire.git
-cd resume-questionnaire
+git clone git remote add origin https://github.com/shw5652/resumeQuestionnaire
+cd resumeQuestionnaire
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
